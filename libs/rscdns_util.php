@@ -3,7 +3,7 @@
 * Helper class to preform some basic tasks. 
 *
 */
-class RscdnsUtil extends Object {
+class RscdnsUtil extends CakeObject {
 	/**
 	* Rscdns configurations stored in
 	* app/config/litle.php
