@@ -68,7 +68,7 @@ class RscdnsUtil extends CakeObject {
 	*/
 	static public function setConfig($key = null, $value = null) {
 		if (strpos($key, '.')!==false) {
-			self::$config = set::insert(self::$config, $key, $value);
+			self::$config = Set::insert(self::$config, $key, $value);
 		}
 		self::$config[$key] = $value;
 		return configure::write("Rscdns.$key", $value);
