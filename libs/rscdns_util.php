@@ -3,7 +3,7 @@
 * Helper class to preform some basic tasks. 
 *
 */
-class RscdnsUtil extends Object {
+class RscdnsUtil extends CakeObject {
 	/**
 	* Rscdns configurations stored in
 	* app/config/litle.php
@@ -68,7 +68,7 @@ class RscdnsUtil extends Object {
 	*/
 	static public function setConfig($key = null, $value = null) {
 		if (strpos($key, '.')!==false) {
-			self::$config = set::insert(self::$config, $key, $value);
+			self::$config = Set::insert(self::$config, $key, $value);
 		}
 		self::$config[$key] = $value;
 		return configure::write("Rscdns.$key", $value);

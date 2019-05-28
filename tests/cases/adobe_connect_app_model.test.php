@@ -60,7 +60,7 @@ class AdobeConnectScoTestCase extends CakeTestCase {
 		$this->assertTrue(!empty($response['Quotas']['Quota']));
 		$this->assertTrue(!empty($response['Trees']['Tree']));
 		$response = $this->AdobeConnectSco->request(array('action' => 'quota-threshold-info'), "/Quotas/Quota/.");
-		$this->assertIdentical($response, set::extract($quotas, "/Quotas/Quota/."));
+		$this->assertIdentical($response, Set::extract($quotas, "/Quotas/Quota/."));
 	}
 }
 ?>

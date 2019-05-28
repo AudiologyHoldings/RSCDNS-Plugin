@@ -35,22 +35,22 @@ class AdobeConnectScoTestCase extends CakeTestCase {
 	function testCreateAndUpdateSco() {
 		$response = $this->AdobeConnectReport->find("bulkconsolidatedtransactions", array('conditions' => array('sco-id' => $this->meetingScoIdForTesting, 'principal-id' => $this->meetingPrincipalIdForTesting), 'limit' => 100));
 		$this->assertTrue(!empty($response));
-		$this->assertIdentical(set::countDim($response), 2);
+		$this->assertIdentical(Set::countDim($response), 2);
 		$response = $this->AdobeConnectReport->find("coursestatus", array('conditions' => array('sco-id' => $this->meetingScoIdForTesting)));
 		$this->assertTrue(!empty($response));
-		$this->assertIdentical(set::countDim($response), 2);
+		$this->assertIdentical(Set::countDim($response), 2);
 		$response = $this->AdobeConnectReport->find("meetingattendance", array('conditions' => array('sco-id' => $this->meetingScoIdForTesting)));
 		$this->assertTrue(!empty($response));
-		$this->assertIdentical(set::countDim($response), 2);
+		$this->assertIdentical(Set::countDim($response), 2);
 		$response = $this->AdobeConnectReport->find("meetingconcurrentusers", array('conditions' => array('sco-id' => $this->meetingScoIdForTesting)));
 		$this->assertTrue(!empty($response));
-		$this->assertIdentical(set::countDim($response), 1);
+		$this->assertIdentical(Set::countDim($response), 1);
 		
 		
 		if ($this->areThereActiveMeetings) {
 			$response = $this->AdobeConnectReport->find("active", array('conditions' => array('sco-id' => $this->meetingScoIdForTesting, 'principal-id' => $this->meetingPrincipalIdForTesting), 'limit' => 100));
 			$this->assertTrue(!empty($response));
-			$this->assertIdentical(set::countDim($response), 2);
+			$this->assertIdentical(Set::countDim($response), 2);
 		}
 	}
 }
